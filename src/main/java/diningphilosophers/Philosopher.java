@@ -25,22 +25,16 @@ public class Philosopher
     public void run() {
         while (jeContinue) {
             try {
-                think();
-                // 2-Step locking protocol
-                // 1st step : try to get resources
+                think();   
                 if (tryTakeStick(myLeftStick)) {
                     if (tryTakeStick(myRightStick)) {
-                        // success : process
                         eat();
-                        // release resources
                         releaseStick(myLeftStick);
                         releaseStick(myRightStick);
                     } else {
-                        // failure : release resources
                         releaseStick(myLeftStick);
                     }
                 }
-                // try again
             } catch (InterruptedException ex) {
                 Logger.getLogger("Table").log(Level.SEVERE, "{0} Interrupted", this.getName());
             }

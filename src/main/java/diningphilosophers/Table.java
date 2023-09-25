@@ -14,7 +14,7 @@ public class Table {
         rigaud.start();
         conchon.start();
         bastide.start();
-        // attendre la frappe d’une touche dans la console
+
         try {
             System.in.read();
         } catch (IOException ex) {

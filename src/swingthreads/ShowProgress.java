@@ -15,8 +15,7 @@ public class ShowProgress extends javax.swing.JFrame {
 					sleep(1000);
 				} catch (InterruptedException ex) {
 				}
-				// Interdit : Swing n'est pas thread safe
-				//jProgressBar1.setValue(i);
+		
 				SwingUtilities.invokeLater(
 					new Runnable() {
 						public void run() {
@@ -24,7 +23,7 @@ public class ShowProgress extends javax.swing.JFrame {
 						}
 					});
 			}
-			// Le Thread est fini, Reactiver le bouton
+
 			SwingUtilities.invokeLater(
 				new Runnable() {
 					public void run() {
@@ -84,8 +83,8 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 			}
 		});
 	}
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+	
     private javax.swing.JButton jButton1;
     private javax.swing.JProgressBar jProgressBar1;
-    // End of variables declaration//GEN-END:variables
+
 }
